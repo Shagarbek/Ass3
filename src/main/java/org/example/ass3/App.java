@@ -87,7 +87,7 @@ public class App {
 
         for (MSTResult r : results) {
             sb.append(String.format(
-                    "%s,%s,%d,%d,%s,%d,%d,%.4f\n",
+                    "%s,%s,%d,%d,%s,%d ms,%d,%.4f\n",
                     r.id,
                     r.name,
                     r.vertices,
@@ -97,6 +97,7 @@ public class App {
                     r.operationCount,
                     r.totalCost
             ));
+
         }
 
         Files.write(Paths.get(outputCsv), sb.toString().getBytes());
@@ -138,7 +139,7 @@ public class App {
                     double avgOps = opMap.get(algo).stream().mapToLong(Long::longValue).average().orElse(0);
                     double cost = costMap.get(algo);
 
-                    sb.append(String.format("%s,%d,%s,%.2f,%.0f,%.4f\n",
+                    sb.append(String.format("%s,%d,%s,%.2f ms,%.0f,%.4f\n",
                             path.getFileName(),
                             graphDataList.length,
                             algo,
@@ -146,6 +147,7 @@ public class App {
                             avgOps,
                             cost
                     ));
+
                 }
             }
         }
