@@ -16,29 +16,31 @@ public class PrimMST {
             return new MSTResult(graphId, graphName, 0, 0, 0, 0, 0);
         }
 
-        String start = graph.vertices.get(0);
-        visited.add(start);
+        for (String start : graph.vertices) {
+            if (visited.contains(start)) continue;
+            visited.add(start);
 
-        while (visited.size() < graph.vertices.size()) {
-            Edge minEdge = null;
-            double minWeight = Double.MAX_VALUE;
+            while (true) {
+                Edge minEdge = null;
+                double minWeight = Double.MAX_VALUE;
 
-            for (Edge edge : graph.edges) {
-                operationCount++;
-                if (visited.contains(edge.from) && !visited.contains(edge.to) && edge.weight < minWeight) {
-                    minWeight = edge.weight;
-                    minEdge = edge;
-                } else if (visited.contains(edge.to) && !visited.contains(edge.from) && edge.weight < minWeight) {
-                    minWeight = edge.weight;
-                    minEdge = new Edge(edge.to, edge.from, edge.weight);
+                for (Edge edge : graph.edges) {
+                    operationCount++;
+                    if (visited.contains(edge.from) && !visited.contains(edge.to) && edge.weight < minWeight) {
+                        minWeight = edge.weight;
+                        minEdge = edge;
+                    } else if (visited.contains(edge.to) && !visited.contains(edge.from) && edge.weight < minWeight) {
+                        minWeight = edge.weight;
+                        minEdge = new Edge(edge.to, edge.from, edge.weight);
+                    }
                 }
+
+                if (minEdge == null) break;
+
+                visited.add(minEdge.to);
+                mstEdges.add(minEdge);
+                totalCost += minEdge.weight;
             }
-
-            if (minEdge == null) break;
-
-            visited.add(minEdge.to);
-            mstEdges.add(minEdge);
-            totalCost += minEdge.weight;
         }
 
         long endTime = System.currentTimeMillis();
