@@ -1,9 +1,8 @@
----
+# Assignment 3: Optimization of a City Transportation Network
+(Minimum Spanning Tree) 
 
-# **Assignment 3: Optimization of a City Transportation Network (Minimum Spanning Tree)**
-
-**Course:** Design and Analysis of Algorithms
-**Student:** Nurbek Shagarbek
+* Course: Design and Analysis of Algorithms 
+* Student: Nurbek Shagarbek
 
 ---
 
