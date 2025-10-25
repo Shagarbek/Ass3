@@ -1,0 +1,9 @@
+Dataset,Graph Count,Algorithm,Avg Time (ms),Avg Operations,Total Cost
+input_extra_large.json,3,Prim,146,20 ms,5604680,445677,0000
+input_extra_large.json,3,Kruskal,2,13 ms,3345,445877,0000
+input_large.json,10,Prim,21,64 ms,1026974,204810,0000
+input_large.json,10,Kruskal,0,62 ms,1359,205646,0000
+input_medium.json,10,Prim,1,08 ms,66470,19292,0000
+input_medium.json,10,Kruskal,0,12 ms,305,19292,0000
+input_small.json,5,Prim,0,00 ms,628,7317,0000
+input_small.json,5,Kruskal,0,00 ms,26,7317,0000
