@@ -1,5 +1,9 @@
 package org.example.ass3;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
@@ -13,7 +17,16 @@ public class App {
     public static void main(String[] args) throws IOException {
         System.out.println("=== MST Optimization Started ===");
 
-        String inputDir = "input";
+        String inputDir = URLDecoder.decode(
+                Objects.requireNonNull(App.class.getClassLoader().getResource("input")).getPath(),
+                StandardCharsets.UTF_8
+        );
+        if (inputDir.startsWith("/")) {
+            inputDir = inputDir.substring(1);
+        }
+
+        System.out.println("Input directory resolved to: " + inputDir);
+
         String outputJson = "output/output.json";
         String outputCsv = "output/results.csv";
         String benchmarkCsv = "output/benchmark.csv";
