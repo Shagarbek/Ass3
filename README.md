@@ -5,7 +5,7 @@
 **Course:** Design and Analysis of Algorithms
 **Student:** Nurbek Shagarbek
 
-
+---
 
 ## **1. Introduction**
 
