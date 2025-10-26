@@ -70,6 +70,13 @@ After executing both algorithms on all datasets, the following average results w
 | **Performance Trend**         | Stable and consistent but heavier                              | Faster on most datasets, especially small ones                            |
 | **Best Use Case**             | Dense graphs (e.g., dense city networks)                       | Sparse graphs (e.g., rural road networks)                                 |
 
+Theoretical vs Practical comparison:
+ Prim’s Algorithm:- Time complexity: O(E log V) with a heap (or O(V^2) with adjacency matrix).- Works well for dense graphs and when using adjacency representations.
+ Kruskal’s Algorithm:- Time complexity: O(E log E) = O(E log V).- Efficient for sparse graphs using edge list + Disjoint Set (Union-Find).
+ 
+Experimental observations:
+Kruskal consistently showed lower execution time and fewer operations on small and sparse datasets.- Prim showed stable performance on dense datasets but with higher operation counts on very large graphs.
+
 ---
 
 ## **5. Conclusion**
