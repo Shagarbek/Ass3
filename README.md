@@ -41,8 +41,8 @@ After executing both algorithms on all datasets, the following average results w
 
 | **Dataset**            | **Graphs** | **Algorithm** | **Avg Time (ms)** | **Avg Operations** | **Total Cost** |
 | ---------------------- | ---------- | ------------- | ----------------- | ------------------ | -------------- |
-| input_small.json       | 5          | Prim          | 0.00              | 628                | 7,317.0000     |
-| input_small.json       | 5          | Kruskal       | 0.00              | 26                 | 7,317.0000     |
+| input_small.json       | 5          | Prim          | 0.02              | 628                | 7,317.0000     |
+| input_small.json       | 5          | Kruskal       | 0.04              | 26                 | 7,317.0000     |
 | input_medium.json      | 10         | Prim          | 1.08              | 66,470             | 19,292.0000    |
 | input_medium.json      | 10         | Kruskal       | 0.12              | 305                | 19,292.0000    |
 | input_large.json       | 10         | Prim          | 21.64             | 1,026,974          | 204,810.0000   |
